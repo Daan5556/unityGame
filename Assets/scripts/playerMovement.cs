@@ -47,7 +47,6 @@ public class playerMovement : MonoBehaviour
             mainCharacterHitbox.localPosition.y,
             mainCharacterHitbox.localPosition.z
         );
-            Debug.Log(mainCharacterHitbox.localPosition);
         }
         // Jump
         if (Input.GetKey(KeyCode.Space) && isGrounded) 

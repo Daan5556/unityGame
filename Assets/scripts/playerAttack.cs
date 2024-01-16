@@ -6,7 +6,7 @@ public class playerAttack : MonoBehaviour
 {
     private Animator animator;
     public playerMovement playerMovement;
-    private Rigidbody2D rigidbody2D;
+    private new Rigidbody2D rigidbody2D;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,12 @@ public class playerAttack : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            animator.SetTrigger("attackHeavy");
+            animator.SetTrigger("attackHeavy"); 
+        }
+
+        if (GetComponent<Rigidbody2D>().velocity.y < 0)
+        {
+            animator.SetTrigger("falling");
         }
     }
     public void AnimationFinished()
