@@ -6,11 +6,13 @@ public class playerAttack : MonoBehaviour
 {
     private Animator animator;
     public playerMovement playerMovement;
+    private Rigidbody2D rigidbody2D;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         playerMovement = GetComponent<playerMovement>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class playerAttack : MonoBehaviour
     {
         playerMovement.moveSpeed = 1f;
         playerMovement.jumpForce = 3f;
+
     }
 
     public void resetMovement()
