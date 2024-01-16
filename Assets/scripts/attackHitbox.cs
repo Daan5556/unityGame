@@ -23,6 +23,15 @@ public class attackHitbox : MonoBehaviour
         hitboxCollider.enabled = false;
     }
 
+    public void changeHitboxSize()
+    {
+        hitboxCollider.radius = 0.93F;
+    }
+
+    public void resetHitboxSize()
+    {
+        hitboxCollider.radius = 0.84F;
+    }
     private void onTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
