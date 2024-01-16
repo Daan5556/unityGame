@@ -9,6 +9,8 @@ public class playerMovement : MonoBehaviour
     private bool isGrounded;
     public SpriteRenderer spriteRenderer;
     private Animator animator;
+    private CircleCollider2D hitboxCollider;
+    public Transform mainCharacterHitbox;
 
     // Start is called before the first frame update
     void Start()    
@@ -30,12 +32,22 @@ public class playerMovement : MonoBehaviour
         if (horizontalInput > 0)
         {
             spriteRenderer.flipX = false;
+            mainCharacterHitbox.localPosition = new Vector3(
+            Mathf.Abs(mainCharacterHitbox.localPosition.x) * 1,
+            mainCharacterHitbox.localPosition.y,
+            mainCharacterHitbox.localPosition.z
+            );
         }
 
         if (horizontalInput < 0)
         {
             spriteRenderer.flipX = true;
-
+            mainCharacterHitbox.localPosition = new Vector3(
+            Mathf.Abs(mainCharacterHitbox.localPosition.x) * -1,
+            mainCharacterHitbox.localPosition.y,
+            mainCharacterHitbox.localPosition.z
+        );
+            Debug.Log(mainCharacterHitbox.localPosition);
         }
         // Jump
         if (Input.GetKey(KeyCode.Space) && isGrounded) 
