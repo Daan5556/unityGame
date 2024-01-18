@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class enemyHealth : MonoBehaviour
 {
+    public float enemyHealthAmount;
+    public float enemyHealthMax = 100;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyHealthAmount = enemyHealthMax;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.gameObject.CompareTag("hitbox"))
+        {
+            Debug.Log("Collision");
+        }
     }
 }
