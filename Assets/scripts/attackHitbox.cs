@@ -32,7 +32,7 @@ public class attackHitbox : MonoBehaviour
     {
         hitboxCollider.radius = 0.84F;
     }
-    private void onTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
