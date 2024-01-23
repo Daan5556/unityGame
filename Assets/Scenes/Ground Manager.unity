@@ -772,12 +772,15 @@ GameObject:
   m_Component:
   - component: {fileID: 978768832}
   - component: {fileID: 978768831}
-  - component: {fileID: 978768830}
   - component: {fileID: 978768833}
   - component: {fileID: 978768834}
   - component: {fileID: 978768835}
   - component: {fileID: 978768836}
   - component: {fileID: 978768837}
+  - component: {fileID: 978768838}
+  - component: {fileID: 978768839}
+  - component: {fileID: 978768840}
+  - component: {fileID: 978768841}
   m_Layer: 0
   m_Name: Main Character
   m_TagString: Player
@@ -785,27 +788,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &978768830
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978768829}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ac023cd598acf5e4c8c71a08612a1758, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &978768831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -846,7 +828,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 100
   m_Sprite: {fileID: 661648744, guid: 514fc81c6338f9f45861564a201c50bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -866,7 +848,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978768829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: -1.05, z: -0.07878542}
+  m_LocalPosition: {x: 0.07, y: -1.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -949,7 +931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e2ba03c327bb64e98de77aa4245331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 978768835}
 --- !u!114 &978768837
 MonoBehaviour:
   m_ObjectHideFlags: 0

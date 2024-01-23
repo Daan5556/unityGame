@@ -8,7 +8,6 @@ public class playerMovement : MonoBehaviour
     public float jumpForce = 5f;
     private bool isGrounded;
     public SpriteRenderer spriteRenderer;
-    private Animator animator;
     private CircleCollider2D hitboxCollider;
     public Transform mainCharacterHitbox;
 
@@ -16,7 +15,6 @@ public class playerMovement : MonoBehaviour
     void Start()    
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -52,16 +50,6 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && isGrounded) 
         {
             jump();
-        }
-
-        // Run Animation
-        if (horizontalInput != 0)
-        {
-            animator.SetBool("isRunning", true);
-        }
-        else
-        {
-            animator.SetBool("isRunning", false);
         }
     }
     

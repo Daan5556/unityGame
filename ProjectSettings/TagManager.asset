@@ -8,6 +8,7 @@ TagManager:
   - hitbox
   - enemy
   - enemyHitbox
+  - dieZone
   layers:
   - Default
   - TransparentFX

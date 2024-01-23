@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class groundManager : MonoBehaviour
@@ -14,13 +13,12 @@ public class groundManager : MonoBehaviour
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        spawnGround();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerTransform.position.x - lastSpawnX > spawnDistance)
+        if (allEnemiesKilled())
         {
             spawnGround();
         }
@@ -28,11 +26,8 @@ public class groundManager : MonoBehaviour
     }
     private void spawnGround()
     {
-        GameObject newGround = Instantiate(groundPrefab, new Vector3(playerTransform.position.x + playerOffset, -7.45F, 0f), Quaternion.identity);
-
-        playerOffset += spawnDistance;
-
-        lastSpawnX = playerTransform.position.x;
+        GameObject newGround = Instantiate(groundPrefab, new Vector3(lastSpawnX + spawnDistance, -7.45F, 0f), Quaternion.identity);
+        lastSpawnX = newGround.transform.position.x;
     }
     private bool allEnemiesKilled()
     {
@@ -40,13 +35,13 @@ public class groundManager : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
+            Rigidbody2D enemyRigidbody = enemy.GetComponent<Rigidbody2D>();
 
-            if (enemy.activeSelf)
+            if (enemyRigidbody != null && !enemyRigidbody.isKinematic)
             {
                 return false;
             }
         }
         return true;
     }
-
 }
