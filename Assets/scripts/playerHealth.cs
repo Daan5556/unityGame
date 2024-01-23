@@ -26,4 +26,10 @@ public class playerHealth : MonoBehaviour
         float healthPercentage = (float)currentHealth / maxHealth;
         slider.value = healthPercentage;
     }
+
+    // other script
+    public void changeHealth(int amount)
+    {
+        currentHealth += amount;
+    }
 }

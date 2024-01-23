@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1.2229004, y: -0.9174042}
-  m_SizeDelta: {x: -21.4827, y: -17.8122}
+  m_AnchoredPosition: {x: 4.5376, y: -0.8781}
+  m_SizeDelta: {x: -17.2713, y: -17.7336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8508775
 MonoBehaviour:
@@ -338,6 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6617aa6b5bc7c54689cb9a83666d04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerHealth: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!212 &259000573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -465,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f45e707c24360c46960535a7ffacd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 50
   currentHealth: 0
   slider: {fileID: 403122992}
 --- !u!114 &403122992
@@ -960,6 +962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6617aa6b5bc7c54689cb9a83666d04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerHealth: {fileID: 403122991}
+  animator: {fileID: 978768830}
 --- !u!1 &996803173
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 996803175}
-  - component: {fileID: 996803174}
+  - component: {fileID: 996803176}
   m_Layer: 0
   m_Name: Ground Manager
   m_TagString: Untagged
@@ -977,21 +981,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &996803174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996803173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df2a50d052a9bc4492eba1880d2934e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundPrefab: {fileID: 8726705439080132607, guid: 516ee9bc1778cf5408250307f843a8b6, type: 3}
-  spawnDistance: 20
-  playerOffset: 1
 --- !u!4 &996803175
 Transform:
   m_ObjectHideFlags: 0
@@ -1007,6 +996,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &996803176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996803173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110896b204b8b7d4b880c15c2c1b9f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundPrefab: {fileID: 8726705439080132607, guid: 516ee9bc1778cf5408250307f843a8b6, type: 3}
+  islandsSpawned: 1
+  offset: 0
+  EnemyRB: {fileID: 0}
 --- !u!1 &1802141414
 GameObject:
   m_ObjectHideFlags: 0

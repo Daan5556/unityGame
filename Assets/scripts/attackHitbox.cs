@@ -5,6 +5,8 @@ using UnityEngine;
 public class attackHitbox : MonoBehaviour
 {
     private CircleCollider2D hitboxCollider;
+    public playerHealth PlayerHealth;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,11 +34,13 @@ public class attackHitbox : MonoBehaviour
     {
         hitboxCollider.radius = 0.84F;
     }
-    private void OnTriggerEnter(Collider other)
+  
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("enemyHitbox"))
         {
-            // Hit logic
+            PlayerHealth.changeHealth(-25);
+            animator.SetTrigger("hit");
         }
     }
 }
